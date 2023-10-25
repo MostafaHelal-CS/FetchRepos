@@ -1,0 +1,129 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: monospace;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: red;
+}
+.repos-container {
+    width: 100%;
+    margin: auto;
+}
+
+input , button {
+    border: none;
+    outline: none;
+    height: 50px;
+}
+
+.repos-container .search__area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #333;
+    padding: 20px;
+    border-bottom: 2px solid #EEE;
+    box-shadow: 0 0 5px #EEE;
+    position: relative;
+    z-index: 1000;
+}
+.repos-container .search__area input {
+    font-size: 20px;
+    padding-left: 30px;
+    flex: 1;
+}
+
+.repos-container .search__area button {
+    background-image: linear-gradient(to right , rgb(194, 13, 13) , rgb(214, 50, 214));
+    color: #FFF;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 20px;
+}
+
+.repos-container .repos {
+    min-height: 100vh;
+    background-color: #EEE;
+    padding: 20px;
+}
+
+.repos .repo {
+    background-color: #333;
+    margin-bottom: 10px;
+    padding: 20px;
+    color:#FFF;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.repos .repo .repoDiv {
+    text-align: end;
+}
+
+.repolink {
+    text-decoration: none;
+    color: #FFF;
+    transition: 0.3s ease-in-out;
+    padding: 4px 15px;
+    border-radius: 3px;
+    background-image: linear-gradient(to right , red , purple);
+    font-weight: bold;
+}
+
+.repolink:not(:last-child) {
+    margin-right: 15px;
+}
+
+@media(max-width:576px){
+    .repos-container .search__area {
+        padding: 15px;
+    }
+    input , button {
+        height: 45px;
+    }
+    .repos-container .search__area input {
+        font-size: 16px;
+        padding-left: 20px;
+    }
+    .repos-container .search__area button {
+        font-size: 16px;
+    }
+    .repos-container .repos {
+        padding: 15px;
+    }
+    .repos .repo {
+        padding: 15px;
+        font-size: 14px;
+    }
+}
+
+.error {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 300px;
+    height: 100px;
+    background-color: #333;
+    text-align: center;
+    line-height: 100px;
+}
+
+.error span {
+    color: #FFF;
+    font-size: 20px;
+    font-weight: bold;
+}
